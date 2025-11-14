@@ -14,19 +14,23 @@ build/
 # FastAPI
 uploads/
 *.db
+*.sqlite3
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.production
 
 # Node
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
 
 # React
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 build/
 
 # IDEs
@@ -39,3 +43,15 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Docker
+.dockerignore
+
+# Logs
+logs/
+*.log
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/

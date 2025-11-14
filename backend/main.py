@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import uvicorn
@@ -11,12 +11,18 @@ from models.deepfake_detector import DeepfakeDetector
 from models.audio_detector import AudioDeepfakeDetector
 from models.image_detector import ImageDeepfakeDetector
 from database.db import init_db, save_analysis_result
+from database.user_db import init_user_db
+from routes.auth_routes import router as auth_router, get_current_active_user
+from auth.jwt_handler import User
 
 app = FastAPI(
     title="DeepGuard AI",
     description="Advanced Deepfake Detection Platform",
     version="1.0.0"
 )
+
+# Include authentication router
+app.include_router(auth_router)
 
 # CORS middleware
 app.add_middleware(
@@ -41,6 +47,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 async def startup_event():
     """Initialize database on startup"""
     await init_db()
+    await init_user_db()
 
 
 @app.get("/")
