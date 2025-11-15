@@ -23,7 +23,6 @@ services:
   - type: web
     name: deepguard-frontend
     env: static
-    region: oregon
     plan: free
     branch: main
     rootDir: frontend
