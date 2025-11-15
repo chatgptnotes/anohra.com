@@ -1,10 +1,9 @@
 services:
   # Backend API Service
   - type: web
-    name: deepguard-api
+    name: anohra-deepguard-api
     env: python
     region: oregon
-    plan: free
     branch: main
     rootDir: backend
     buildCommand: pip install -r requirements-lite.txt
@@ -20,21 +19,16 @@ services:
     autoDeploy: true
 
   # Frontend Static Site
-  - type: web
-    name: deepguard-frontend
-    env: static
-    plan: free
+  - type: static
+    name: anohra-deepguard-frontend
     branch: main
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: build
     envVars:
       - key: REACT_APP_API_URL
-        sync: false
+        value: https://anohra-deepguard-api.onrender.com
     routes:
-      - type: rewrite
-        source: /api/*
-        destination: https://deepguard-api.onrender.com/api/*
       - type: rewrite
         source: /*
         destination: /index.html

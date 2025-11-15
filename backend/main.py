@@ -16,7 +16,7 @@ from routes.auth_routes import router as auth_router, get_current_active_user
 from auth.jwt_handler import User
 
 app = FastAPI(
-    title="DeepGuard AI",
+    title="Anohra Deep Guard AI",
     description="Advanced Deepfake Detection Platform",
     version="1.0.0"
 )
@@ -53,7 +53,7 @@ async def startup_event():
 @app.get("/")
 async def root():
     return {
-        "name": "DeepGuard AI",
+        "name": "Anohra Deep Guard AI",
         "version": "1.0.0",
         "description": "Advanced Deepfake Detection API"
     }

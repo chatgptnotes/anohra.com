@@ -1,6 +1,6 @@
-# DeepGuard AI - Advanced Deepfake Detection Platform
+# Anohra Deep Guard AI - Advanced Deepfake Detection Platform
 
-DeepGuard AI is a comprehensive deepfake detection platform inspired by Sensity AI, designed to identify manipulated media with high accuracy using advanced machine learning techniques.
+Anohra Deep Guard AI is a comprehensive deepfake detection platform inspired by Sensity AI, designed to identify manipulated media with high accuracy using advanced machine learning techniques.
 
 ## Features
 
@@ -313,4 +313,4 @@ For issues, questions, or contributions, please open an issue on GitHub.
 
 ---
 
-**DeepGuard AI** - Protecting authenticity in the age of synthetic media
+**Anohra Deep Guard AI** - Protecting authenticity in the age of synthetic media

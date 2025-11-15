@@ -49,7 +49,7 @@ function App() {
         <div className="header-content">
           <div className="logo">
             <Shield size={32} />
-            <h1>DeepGuard AI</h1>
+            <h1>Anohra Deep Guard AI</h1>
           </div>
           <p className="tagline">Advanced Deepfake Detection Platform</p>
         </div>
@@ -111,8 +111,8 @@ function App() {
 
       <footer className="app-footer">
         <p>
-          DeepGuard AI - Protecting authenticity in the age of synthetic media |{' '}
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          Anohra Deep Guard AI - Protecting authenticity in the age of synthetic media |{' '}
+          <a href="https://github.com/chatgptnotes/anohra.com" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
         </p>
