@@ -3,7 +3,8 @@ import './App.css';
 import FileUpload from './components/FileUpload';
 import AnalysisResults from './components/AnalysisResults';
 import Dashboard from './components/Dashboard';
-import { Shield, AlertTriangle, CheckCircle, Info } from 'lucide-react';
+import LandingPage from './components/LandingPage';
+import { Shield, AlertTriangle, Info } from 'lucide-react';
 
 interface AnalysisResult {
   file_id: string;
@@ -21,6 +22,7 @@ interface AnalysisResult {
 }
 
 function App() {
+  const [showLanding, setShowLanding] = useState(true);
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,11 +45,32 @@ function App() {
     setLoading(false);
   };
 
+  const handleGetStarted = () => {
+    setShowLanding(false);
+    setActiveTab('upload');
+  };
+
+  if (showLanding) {
+    return (
+      <div className="App">
+        <LandingPage onGetStarted={handleGetStarted} />
+        <footer className="app-footer">
+          <p>
+            Anohra Deep Guard AI - Protecting authenticity in the age of synthetic media |{' '}
+            <a href="https://github.com/chatgptnotes/anohra.com" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </p>
+        </footer>
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <header className="app-header">
         <div className="header-content">
-          <div className="logo">
+          <div className="logo" onClick={() => setShowLanding(true)} style={{ cursor: 'pointer' }}>
             <Shield size={32} />
             <h1>Anohra Deep Guard AI</h1>
           </div>
